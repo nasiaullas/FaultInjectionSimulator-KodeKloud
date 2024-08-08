@@ -1,4 +1,4 @@
-# FIS Workshop Experiment CloudFormation Template
+# Fault Injection Simulator - KodeKloud
 
 This repository contains a CloudFormation template to set up an AWS Fault Injection Simulator (FIS) experiment. The experiment is designed to terminate half of the instances in an auto-scaling group.
 
@@ -17,7 +17,7 @@ The CloudFormation template in this repository sets up an AWS FIS experiment tem
 
 ## Resources
 
-- **FisWorkshopTemplate**: An AWS::FIS::ExperimentTemplate resource that defines the experiment.
+- **FisWorkshopTemplate**: An `AWS::FIS::ExperimentTemplate` resource that defines the experiment.
   - **Description**: Terminate half of the instances in the auto-scaling group.
   - **Tags**: A tag to identify the experiment.
   - **Actions**:
@@ -44,13 +44,13 @@ No parameters are required for this template.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/fis-workshop-template.git
-    cd fis-workshop-template
+    git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
+    cd FaultInjectionSimulator-KodeKloud
     ```
 
 2. Deploy the CloudFormation stack:
     ```sh
-    aws cloudformation create-stack --stack-name FISWorkshopStack --template-body file://fis-workshop-template.json --capabilities CAPABILITY_NAMED_IAM
+    aws cloudformation create-stack --stack-name FISWorkshopStack --template-body file://intro-experiment-cfn-template.json --capabilities CAPABILITY_NAMED_IAM
     ```
 
 3. Monitor the stack creation in the AWS CloudFormation Console.
