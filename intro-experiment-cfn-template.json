@@ -44,7 +44,7 @@
                     }
                 ],
                 "RoleArn": {
-                    "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/FisWorkshopEC2ServiceRole"
+                    "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/KKFisWorkshopEC2ServiceRole"
                 },
                 "LogConfiguration": {
                     "CloudWatchLogsConfiguration": {
