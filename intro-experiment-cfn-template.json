@@ -49,7 +49,7 @@
                 "LogConfiguration": {
                     "CloudWatchLogsConfiguration": {
                         "LogGroupArn": {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:FISExperiments:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:FISExperiment:*"
                         }
                     },
                     "LogSchemaVersion": 2
