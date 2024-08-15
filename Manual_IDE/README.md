@@ -56,6 +56,8 @@ Now, clone your GitHub repository and run the setup script to install all necess
 ```bash
 git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
 cd FaultInjectionSimulator-KodeKloud/Manual_IDE
+chmod 777 pre-req-manual-ide.sh
+sudo su -
 ./pre-req-manual-ide.sh
 
 ```
