@@ -47,7 +47,7 @@ echo "AWS CDK version:"
 cdk --version
 
 echo "kubectl version:"
-kubectl version --client --short
+kubectl version --client
 
 echo "Helm version:"
 helm version --short
