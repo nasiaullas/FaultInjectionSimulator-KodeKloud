@@ -102,6 +102,9 @@ mkdir -p ~/environment/workshopfiles && git clone https://github.com/aws-samples
 ```
 
 
+Please go to https://catalog.us-east-1.prod.workshops.aws/workshops/eb89c4d5-7c9a-40e0-b0bc-1cde2df1cb97/en-US/environment/bring-your-own  (Deploy Application) section to continue configuration 
+
+
 
 
 
