@@ -54,6 +54,7 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 
 Next, launch an EC2 instance: name fisidereplec2
 Size:30 GB
+Instance Type: m5.xlarge
 
 
 - Choose your preferred region.
