@@ -11,7 +11,6 @@ Welcome to the AWS Fault Injection Simulator (FIS) Workshop! This guide will wal
   - [3. Install Git on the EC2 Instance](#3-install-git-on-the-ec2-instance)
   - [4. Clone GitHub Repository and Run Setup Script](#4-clone-github-repository-and-run-setup-script)
   - [5. Clone FIS Workshop Experiments](#5-clone-fis-workshop-experiments)
-  - [6. Automate the Setup with CloudFormation](#6-automate-the-setup-with-cloudformation)
 - [License](#license)
 
 ## Prerequisites
