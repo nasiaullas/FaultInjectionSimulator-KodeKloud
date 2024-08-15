@@ -72,6 +72,7 @@ Next, clone the FIS Workshop experiments repository:
 
 ```bash
 mkdir -p ~/environment/workshopfiles && git clone https://github.com/aws-samples/aws-fault-injection-simulator-workshop-v2.git ~/environment/workshopfiles/fis-workshop
+```
 
 
 
