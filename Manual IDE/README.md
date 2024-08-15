@@ -45,6 +45,8 @@ Once your EC2 instance is up and running, SSH into it and install Git:
 ```bash
 sudo yum update -y
 sudo yum install git -y
+\`\`\`
+
 ### 4. Clone GitHub Repository and Run Setup Script
 
 Now, clone your GitHub repository and run the setup script to install all necessary dependencies:
