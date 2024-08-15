@@ -30,21 +30,21 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 - **Role Name:** `fisworkshop-admin`
 - **Permissions:** Assign Custom Trust Policy
   ```bash
-{
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Principal": {
-				"Service": [
-					"ec2.amazonaws.com",
-					"ssm.amazonaws.com"
-				]
-			},
-			"Action": "sts:AssumeRole"
-		}
-	]
-}
+	{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Effect": "Allow",
+				"Principal": {
+					"Service": [
+						"ec2.amazonaws.com",
+						"ssm.amazonaws.com"
+					]
+				},
+				"Action": "sts:AssumeRole"
+			}
+		]
+	}
 ```
 - **Important:** The naming convention (`fisworkshop-admin`) is crucial for the rest of the lab to work properly.
 
