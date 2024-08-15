@@ -47,21 +47,29 @@ Once your EC2 instance is up and running, SSH into it and install Git:
 sudo yum update -y
 sudo yum install git -y
 
-**### 4. Clone GitHub Repository and Run Setup Script**
+### 3. Install Git on the EC2 Instance
 
-Now, clone your GitHub repository and run the setup script to install all necessary dependencies:This script will install Docker, Kubernetes, Node.js, AWS CDK, and other dependencies needed for the lab.
+Once your EC2 instance is up and running, SSH into it and install Git:
+
+```bash
+sudo yum update -y
+sudo yum install git -y
+
+### 4. Clone GitHub Repository and Run Setup Script
+
+Now, clone your GitHub repository and run the setup script to install all necessary dependencies:
 
 ```bash
 git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
 cd FaultInjectionSimulator-KodeKloud/Manual\ IDE
 ./pre-req-manual-ide.sh
 
-**### 5. Clone FIS Workshop Experiments**
+### Clone FIS Workshop Experiments
+
 Next, clone the FIS Workshop experiments repository:
 
 ```bash
 git clone https://github.com/aws-samples/aws-fault-injection-simulator-workshop-v2.git
-
 
 
 
