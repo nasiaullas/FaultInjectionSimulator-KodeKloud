@@ -71,8 +71,8 @@ sudo su -
 Once your EC2 instance is up and running, SSH into it and install Git:
 
 ```bash
-sudo yum update -y
-sudo yum install git -y
+yum update -y
+yum install git -y
 ```
 
 ### 4. Clone GitHub Repository and Run Setup Script
@@ -89,7 +89,7 @@ cd FaultInjectionSimulator-KodeKloud/Manual_IDE
 chmod 777 pre-req-manual-ide.sh
 ```
 ```bash
-sudo ./pre-req-manual-ide.sh
+./pre-req-manual-ide.sh
 ```
 
 ### 4. Clone FIS Workshop Experiments
