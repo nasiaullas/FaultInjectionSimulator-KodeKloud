@@ -48,6 +48,8 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 		]
 	}
 	```
+- - **Policies** Assign AmazonSSMManagedInstanceCore and AdministratorAccess .
+   
 ### 2. Launch EC2 Instance
 
 Next, launch an EC2 instance: name fisidereplec2
