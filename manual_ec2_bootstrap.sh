@@ -30,4 +30,29 @@ mv /tmp/linux-amd64/helm /usr/local/bin/helm
 curl --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 mv /tmp/eksctl /usr/local/bin/
 
+# Echo versions to verify installation
+echo "Node.js version:"
+node -v
+
+echo "npm version:"
+npm -v
+
+echo "Git version:"
+git --version
+
+echo "Docker version:"
+docker --version
+
+echo "AWS CDK version:"
+cdk --version
+
+echo "kubectl version:"
+kubectl version --client --short
+
+echo "Helm version:"
+helm version --short
+
+echo "eksctl version:"
+eksctl version
+
 echo "Environment setup complete."
