@@ -29,8 +29,9 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 
 - **Role Name:** `fisworkshop-admin`
 - **Permissions:** Assign Custom Trust Policy
+- - **Important:** The naming convention (`fisworkshop-admin`) is crucial for the rest of the lab to work properly.
   
-  ```bash
+ 	 ```bash
 	{
 		"Version": "2012-10-17",
 		"Statement": [
@@ -46,10 +47,7 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 			}
 		]
 	}
-```
-
-- **Important:** The naming convention (`fisworkshop-admin`) is crucial for the rest of the lab to work properly.
-
+	```
 ### 2. Launch EC2 Instance
 
 Next, launch an EC2 instance: name fisidereplec2
