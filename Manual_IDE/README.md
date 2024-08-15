@@ -39,6 +39,13 @@ Size:30 GB
 
 - Choose your preferred region.
 - Assign the `fisworkshop-admin` IAM role to this EC2 instance.
+### 3. Login to EC2 instance and switch to root 
+
+Once your EC2 instance is up and running, SSH into it and install Git:
+
+```bash
+sudo su -
+```
 
 ### 3. Install Git on the EC2 Instance
 
