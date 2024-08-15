@@ -33,7 +33,9 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 
 ### 2. Launch EC2 Instance
 
-Next, launch an EC2 instance:
+Next, launch an EC2 instance: name fisidereplec2
+Size:30 GB
+
 
 - Choose your preferred region.
 - Assign the `fisworkshop-admin` IAM role to this EC2 instance.
