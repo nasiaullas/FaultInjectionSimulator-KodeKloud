@@ -55,11 +55,17 @@ Now, clone your GitHub repository and run the setup script to install all necess
 
 ```bash
 git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
-cd FaultInjectionSimulator-KodeKloud/Manual_IDE
-chmod 777 pre-req-manual-ide.sh
-sudo ./pre-req-manual-ide.sh
-
 ```
+```bash
+cd FaultInjectionSimulator-KodeKloud/Manual_IDE
+```
+```bash
+chmod 777 pre-req-manual-ide.sh
+```
+```bash
+sudo ./pre-req-manual-ide.sh
+```
+
 ### 4. Clone FIS Workshop Experiments
 
 Next, clone the FIS Workshop experiments repository:
