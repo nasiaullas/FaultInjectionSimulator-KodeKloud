@@ -23,7 +23,7 @@ cd FaultInjectionSimulator-KodeKloud/Cloudformation_IDE
 Download the FISAdminSetup.yaml file from this folder.
 
 ### 4.Deploy the CloudFormation Stack
-Log in to your AWS account, switch to the CloudFormation service, and upload the FISAdminSetup.yaml file. Run the stack to create the necessary resources.
+Log in to your AWS account, switch to the CloudFormation service, and upload the FISAdminSetup.yaml file. Run the stack to create the necessary resources. Call it FISAdminSetup
 
 ### 5.Wait for EC2 Instance to Boot
 After running the CloudFormation stack, wait for the EC2 instance to boot up. Check that both the IAM role and the instance have been created successfully.
