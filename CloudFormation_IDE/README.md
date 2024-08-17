@@ -49,7 +49,7 @@ git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
 ```
 Navigate to the cloudformation_ide folder:
 ```bash
-cd FaultInjectionSimulator-KodeKloud/Cloudformation_IDE
+cd FaultInjectionSimulator-KodeKloud/CloudFormation_IDE
 ```
 ### 9. Check for Dependencies
 Run the chk_dependencies.sh script to ensure all necessary dependencies have been downloaded:
