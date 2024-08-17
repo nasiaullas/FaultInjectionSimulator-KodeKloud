@@ -48,6 +48,7 @@ cd FaultInjectionSimulator-KodeKloud/Cloudformation_IDE
 ### 8. Check for Dependencies
 Run the chk_dependencies.sh script to ensure all necessary dependencies have been downloaded:
 ```bash
+chmod 777 chk_dependencies.sh
 ./chk_dependencies.sh
 ```
 ### 9. Clone FIS Workshop Experiments
