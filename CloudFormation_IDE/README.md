@@ -16,7 +16,7 @@ git clone https://github.com/nasiaullas/FaultInjectionSimulator-KodeKloud.git
 Once the repository is cloned, navigate to the Cloudformation_IDE folder:
 
 ```bash
-cd FaultInjectionSimulator-KodeKloud/Cloudformation_IDE
+cd FaultInjectionSimulator-KodeKloud/CloudFormation_IDE
 ```
 ### 3.Download the YAML File
 
