@@ -1,5 +1,16 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "DefaultVPCId": {
+      "Type": "AWS::EC2::VPC::Id",
+      "Description": "The default VPC ID for the current region"
+    },
+    "LatestAl2023AmiId": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Description": "The latest Amazon Linux 2023 AMI ID with kernel 6.1",
+      "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
+    }
+  },
   "Resources": {
     "FISWorkshopAdminRole": {
       "Type": "AWS::IAM::Role",
@@ -38,14 +49,55 @@
         ]
       }
     },
+    "FISWorkshopKeyPair": {
+      "Type": "AWS::EC2::KeyPair",
+      "Properties": {
+        "KeyName": "fisworkshop-keypair",
+        "KeyType": "rsa",
+        "KeyFormat": "pem"
+      }
+    },
+    "FISWorkshopSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Enable SSH access",
+        "VpcId": {
+          "Ref": "DefaultVPCId"
+        },
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIp": "0.0.0.0/0"
+          }
+        ],
+        "SecurityGroupEgress": [
+          {
+            "IpProtocol": "-1",
+            "FromPort": 0,
+            "ToPort": 0,
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
+      }
+    },
     "fisidereplec2Iac": {
       "Type": "AWS::EC2::Instance",
       "DependsOn": "FISWorkshopAdminInstanceProfile",
       "Properties": {
         "InstanceType": "m5.xlarge",
         "ImageId": {
-          "Fn::Sub": "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}"
+          "Ref": "LatestAl2023AmiId"
         },
+        "KeyName": {
+          "Ref": "FISWorkshopKeyPair"
+        },
+        "SecurityGroupIds": [
+          {
+            "Ref": "FISWorkshopSecurityGroup"
+          }
+        ],
         "IamInstanceProfile": {
           "Ref": "FISWorkshopAdminInstanceProfile"
         },
@@ -53,8 +105,8 @@
           "Fn::Base64": {
             "Fn::Sub": "#!/bin/bash\n
               yum update -y\n
-              curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -\n
-              sudo yum install -y nodejs\n
+              curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -\n
+              yum install -y nodejs\n
               yum install -y git docker\n
               systemctl start docker\n
               systemctl enable docker\n
@@ -65,7 +117,7 @@
               curl --location \"https://get.helm.sh/helm-v3.13.0-linux-amd64.tar.gz\" | tar xz -C /tmp\n
               mv /tmp/linux-amd64/helm /usr/local/bin/helm\n
               curl --location \"https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\" | tar xz -C /tmp\n
-              mv /tmp/eksctl /usr/local/bin"
+              mv /tmp/eksctl /usr/local/bin/\n"
           }
         },
         "Tags": [
@@ -78,3 +130,4 @@
     }
   }
 }
+
