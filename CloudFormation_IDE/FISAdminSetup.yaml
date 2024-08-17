@@ -46,7 +46,6 @@
         "ImageId": {
           "Fn::Sub": "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}"
         },
-        "KeyName": "YourKeyPairName", // Replace 'YourKeyPairName' with the actual KeyPair name
         "IamInstanceProfile": {
           "Ref": "FISWorkshopAdminInstanceProfile"
         },
