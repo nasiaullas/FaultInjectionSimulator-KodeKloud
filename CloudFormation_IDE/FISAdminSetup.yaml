@@ -101,6 +101,16 @@
         "IamInstanceProfile": {
           "Ref": "FISWorkshopAdminInstanceProfile"
         },
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "VolumeSize": 30,
+              "VolumeType": "gp3",
+              "DeleteOnTermination": true
+            }
+          }
+        ],
         "UserData": {
           "Fn::Base64": {
             "Fn::Sub": "#!/bin/bash\n
