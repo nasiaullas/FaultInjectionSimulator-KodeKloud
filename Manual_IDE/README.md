@@ -29,7 +29,7 @@ First, you need to create an IAM role that will be used by your EC2 instance.
 
 - **Role Name:** `fisworkshop-admin`
 -  **Important:** The naming convention (`fisworkshop-admin`) is crucial for the rest of the lab to work properly.
-  - Create role with EC2 permissions . Edit trust policy once IAM role is created using below 
+  - **Create role with EC2 permissions** 
 - **Permissions:** Select AWS Service > EC2 > Administrator access. Once role is created, edit trust policy as below.  
 
   
