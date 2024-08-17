@@ -1,82 +1,81 @@
 {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Resources": {
-      "FISWorkshopAdminRole": {
-        "Type": "AWS::IAM::Role",
-        "Properties": {
-          "RoleName": "fisworkshop-admin",
-          "AssumeRolePolicyDocument": {
-            "Version": "2012-10-17",
-            "Statement": [
-              {
-                "Effect": "Allow",
-                "Principal": {
-                  "Service": [
-                    "ec2.amazonaws.com",
-                    "ssm.amazonaws.com"
-                  ]
-                },
-                "Action": "sts:AssumeRole"
-              }
-            ]
-          },
-          "ManagedPolicyArns": [
-            "arn:aws:iam::aws:policy/AdministratorAccess",
-            "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-          ],
-          "Path": "/"
-        }
-      },
-      "FISWorkshopAdminInstanceProfile": {
-        "Type": "AWS::IAM::InstanceProfile",
-        "Properties": {
-          "InstanceProfileName": "fisworkshop-admin-profile",
-          "Roles": [
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "FISWorkshopAdminRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": "fisworkshop-admin",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
             {
-              "Ref": "FISWorkshopAdminRole"
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "ec2.amazonaws.com",
+                  "ssm.amazonaws.com"
+                ]
+              },
+              "Action": "sts:AssumeRole"
             }
           ]
-        }
-      },
-      "fisidereplec2Iac": {
-        "Type": "AWS::EC2::Instance",
-        "DependsOn": "FISWorkshopAdminInstanceProfile",
-        "Properties": {
-          "InstanceType": "m5.xlarge",
-          "ImageId": {
-            "Fn::Sub": "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}"
-          },
-          # "KeyName": "YourKeyPairName",
-          "IamInstanceProfile": {
-            "Ref": "FISWorkshopAdminInstanceProfile"
-          },
-          "UserData": {
-            "Fn::Base64": {
-              "Fn::Sub": "#!/bin/bash\n
-                yum update -y\n
-                curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -\n
-                sudo yum install -y nodejs\n
-                yum install -y git docker\n
-                systemctl start docker\n
-                systemctl enable docker\n
-                npm install -g aws-cdk --force\n
-                curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/linux/amd64/kubectl\n
-                chmod +x kubectl\n
-                mv kubectl /usr/local/bin/\n
-                curl --location \"https://get.helm.sh/helm-v3.13.0-linux-amd64.tar.gz\" | tar xz -C /tmp\n
-                mv /tmp/linux-amd64/helm /usr/local/bin/helm\n
-                curl --location \"https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\" | tar xz -C /tmp\n
-                mv /tmp/eksctl /usr/local/bin"
-            }
-          },
-          "Tags": [
-            {
-              "Key": "Name",
-              "Value": "fisidereplec2Iac"
-            }
-          ]
-        }
+        },
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/AdministratorAccess",
+          "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+        ],
+        "Path": "/"
+      }
+    },
+    "FISWorkshopAdminInstanceProfile": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "InstanceProfileName": "fisworkshop-admin-profile",
+        "Roles": [
+          {
+            "Ref": "FISWorkshopAdminRole"
+          }
+        ]
+      }
+    },
+    "fisidereplec2Iac": {
+      "Type": "AWS::EC2::Instance",
+      "DependsOn": "FISWorkshopAdminInstanceProfile",
+      "Properties": {
+        "InstanceType": "m5.xlarge",
+        "ImageId": {
+          "Fn::Sub": "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}"
+        },
+        "KeyName": "YourKeyPairName", // Replace 'YourKeyPairName' with the actual KeyPair name
+        "IamInstanceProfile": {
+          "Ref": "FISWorkshopAdminInstanceProfile"
+        },
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Sub": "#!/bin/bash\n
+              yum update -y\n
+              curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -\n
+              sudo yum install -y nodejs\n
+              yum install -y git docker\n
+              systemctl start docker\n
+              systemctl enable docker\n
+              npm install -g aws-cdk --force\n
+              curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/linux/amd64/kubectl\n
+              chmod +x kubectl\n
+              mv kubectl /usr/local/bin/\n
+              curl --location \"https://get.helm.sh/helm-v3.13.0-linux-amd64.tar.gz\" | tar xz -C /tmp\n
+              mv /tmp/linux-amd64/helm /usr/local/bin/helm\n
+              curl --location \"https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\" | tar xz -C /tmp\n
+              mv /tmp/eksctl /usr/local/bin"
+          }
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "fisidereplec2Iac"
+          }
+        ]
       }
     }
   }
-
+}
