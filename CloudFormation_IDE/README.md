@@ -56,6 +56,7 @@ Run the chk_dependencies.sh script to ensure all necessary dependencies have bee
 ```bash
 chmod 777 chk_dependencies.sh
 ./chk_dependencies.sh
+```
 
 
 
