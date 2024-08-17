@@ -35,7 +35,13 @@ Once the instance is ready, log in to it. Switch to the sudo user:
 ```bash
 sudo su -
 ```
-### 7. Clone the Repository Again
+
+### 7. Clone FIS Workshop Experiments
+Next, clone the FIS Workshop experiments repository:
+```bash
+mkdir -p ~/environment/workshopfiles && git clone https://github.com/aws-samples/aws-fault-injection-simulator-workshop-v2.git ~/environment/workshopfiles/fis-workshop
+```
+### Optional ### 8. Clone the Repository Again
 Inside the EC2 instance, clone the repository again:
 
 ```bash
@@ -45,22 +51,11 @@ Navigate to the cloudformation_ide folder:
 ```bash
 cd FaultInjectionSimulator-KodeKloud/Cloudformation_IDE
 ```
-### 8. Check for Dependencies
+### 9. Check for Dependencies
 Run the chk_dependencies.sh script to ensure all necessary dependencies have been downloaded:
 ```bash
 chmod 777 chk_dependencies.sh
 ./chk_dependencies.sh
-```
-### 9. Clone FIS Workshop Experiments
-Next, clone the FIS Workshop experiments repository:
-```bash
-mkdir -p ~/environment/workshopfiles && git clone https://github.com/aws-samples/aws-fault-injection-simulator-workshop-v2.git ~/environment/workshopfiles/fis-workshop
-```
-### 10. Set Up AWS CLI Region
-Finally, set up the AWS CLI region by running the following command. You can skip the access key and secret access key setup, and set the region to where you are logged in:
-```bash
-aws configure
-```
 
 
 
