@@ -2,10 +2,8 @@
 
 This repository contains a CloudFormation template to set up an AWS Fault Injection Simulator (FIS) experiment. The experiment is designed to terminate half of the instances in an auto-scaling group.
 
-# Warning
-Note: Running this lab will INCUR COSTS. Please review your resources and budgeting before proceeding. Additionally, be sure to clean up resources as per lab instructions towards the end of the course. to avoid unnecessary charges.
-
-Please check for Lesson "Cleanup Process" under the Conclusion Section and follow along all instructions to avoid any charges
+# ⚠️ Warning
+Note: Running this lab will INCUR COSTS. Please review your resources and budgeting before proceeding. Additionally, be sure to follow the Cleanup Process outlined in the Conclusion section to avoid unnecessary charges after completing the lab.
 
 
 ## Table of Contents
