@@ -3,7 +3,7 @@
 Welcome to the AWS Fault Injection Simulator (FIS) Workshop! This guide will walk you through the setup process, which includes creating the necessary IAM role, launching an EC2 instance, installing dependencies, and cloning the required GitHub repositories. By the end of this guide, you'll be ready to dive into the workshop and start experimenting with AWS FIS.
 
 
-⚠️ Warning
+## ⚠️ Warning
 Note: Running this lab will INCUR COSTS. Please review your resources and budgeting before proceeding. Additionally, be sure to follow the Cleanup Process outlined in the Conclusion section to avoid unnecessary charges after completing the lab
 
 ## Table of Contents
