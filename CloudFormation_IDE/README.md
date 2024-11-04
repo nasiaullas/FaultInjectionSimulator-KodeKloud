@@ -1,6 +1,9 @@
 # Fault Injection Simulator Setup
 
 This guide will walk you through the process of setting up your environment for the Fault Injection Simulator (FIS) Workshop.
+Note: Running this lab will INCUR COSTS. Please review your resources and budgeting before proceeding. Additionally, be sure to clean up resources as per lab instructions towards the end of the course.
+to avoid unnecessary charges.
+Please check for section "Cleanup Process" towards the end of the course. 
 
 ## Steps to Get Started
 
